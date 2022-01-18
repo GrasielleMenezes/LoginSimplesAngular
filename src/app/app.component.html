@@ -1,0 +1,29 @@
+<div class=" p-3 h-100" style="background-color:#282be2">
+  <div class="container-fluid ">
+    <h1 class="text-center titulo">Login</h1>
+    <div class="row d-flex justify-content-center border border-primary rounded p-1 corbranco">
+      <div class="alinhaNome">
+        <h3>Seja Bem-vindo {{nome}} </h3>
+      </div>
+      <nav *ngFor="let r of rotas" class="alinhaNome">
+        <i *ngIf="r == '/home'" class="bi bi-door-open icons" routerLink="/home"  style="font-size: 2rem; color: cornflowerblue;"></i>
+        <i *ngIf="r == '/rota1'" class="bi bi-flower1 icons" routerLink="/rota1"  style="font-size: 2rem; color: cornflowerblue;"></i>
+        <i *ngIf="r == '/rota1/detalhe'" class="bi bi-book icons" routerLink="/rota1/detalhe"  style="font-size: 2rem; color: cornflowerblue;"></i>
+        <i *ngIf="r == '/rota1/detalhe:id'" class="bi bi-journal-check icons" routerLink="/rota1/detalhe/10"  style="font-size: 2rem; color: cornflowerblue;"></i>
+        <i *ngIf="r == '/rota2'" class="bi bi-arrow-up-circle icons"  routerLink="/rota2"  style="font-size: 2rem; color: cornflowerblue;"></i>
+        <i *ngIf="r == '/rota2/detalhe'" class="bi bi-arrow-up-right-square icons" routerLink="/rota2/detalhe"  style="font-size: 2rem; color: cornflowerblue;"></i>
+      </nav>
+      <div class="alinha">
+        <button type="button" (click)="novo()" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Fechar">
+          <i class="bi bi-door-closed" style="font-size: 2rem; color: cornflowerblue;"></i>
+        </button>
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="corazul p-3 border">
+        <formulario (evento)="recebeInformacao($event)" *ngIf="usuario.length == 0"></formulario>
+      </div>
+    </div> 
+  </div>
+</div>
